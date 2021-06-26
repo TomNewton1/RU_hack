@@ -28,8 +28,8 @@ def login_view(request):
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
         else:
-            return render(request, "auctions/login.html", {
-                "message": "Invalid username and/or password."
+            return render(request, "UCAS_clear/login.html", {
+                "message": "Invalid email and/or password."
             })
     else:
         return render(request, "UCAS_clear/login.html")
