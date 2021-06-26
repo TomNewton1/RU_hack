@@ -1,0 +1,78 @@
+input:focus {
+	outline: none;
+}
+.register-container,
+.login-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10rem auto;
+}
+
+.form-title {
+	font-size: 1.8rem;
+	text-align: center;
+	font-weight: bold;
+	margin: 1rem 0rem;
+}
+
+.register-form,
+.login-form {
+	width: 100%;
+	background-color: #f9fafb;
+	padding: 2rem 5rem;
+	border-radius: 0.5rem;
+
+	box-shadow: 3px 4px 8px 6px rgba(0, 0, 0, 0.3);
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	flex: 1;
+}
+
+.input-field {
+	position: relative;
+	margin: 1rem auto;
+}
+
+.input-field input {
+	padding: 0.5rem 2.5rem;
+	width: 100%;
+	font-family: "Roboto", sans-serif;
+	outline: none;
+}
+
+::placeholder {
+	font-family: "Roboto", sans-serif;
+	color: black;
+}
+
+.input-field span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 1.5rem;
+	display: flex;
+	align-items: center;
+	margin-left: 8px;
+	border-right: 1px solid #9ca3af;
+}
+
+.btn-register,
+.btn-login {
+	width: 100%;
+	padding: 1rem 0rem;
+	border: 3px solid #6b7280;
+	font-size: 1.2rem;
+	font-weight: bold;
+	transition: all 200ms ease;
+}
+
+.btn-register:hover,
+.btn-login:hover {
+	background-color: #6b7280;
+	color: white;
+}
