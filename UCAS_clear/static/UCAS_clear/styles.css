@@ -42,8 +42,8 @@ a:hover {
 	color: #6b7280;
 }
 
-#login,
-#logout {
+#logout,
+#register {
 	background-color: #6b7280;
 	color: white;
 	border-radius: 3px;
@@ -288,4 +288,171 @@ footer .container {
 
 .searchbar input:focus {
 	background-color: #dbeafe;
+}
+
+/* USERPAGE STYLES */
+.userpage-container {
+	min-height: 100vh;
+}
+
+.user-details {
+	height: 90vh;
+	background-color: #212934;
+	padding: 5rem 8rem;
+	--webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 20%);
+	clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 60vh);
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.username h2 {
+	font-size: 2.4rem;
+	font-weight: 400;
+	color: #d1d5db;
+}
+
+.username p {
+	font-weight: 300;
+	margin-top: -0.5rem;
+}
+
+.username span {
+	font-size: 0.9rem;
+	color: #9ca3af;
+	letter-spacing: 1px;
+}
+
+.current-preference {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.current-preference h2 {
+	color: #d1d5db;
+	font-size: 1.6rem;
+	font-weight: 400;
+	margin-right: 2rem;
+}
+
+.current-preference span {
+	color: #9ca3af;
+	font-size: 0.9rem;
+	font-weight: 300;
+	cursor: pointer;
+	transition: all 300ms ease;
+}
+
+.current-preference span:hover {
+	text-decoration: underline;
+}
+
+.course-details p {
+	margin: 0 !important;
+	padding-top: 5px;
+	color: #d1d5db;
+}
+
+.user-details-right {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.user-details-right a {
+	color: white;
+	margin-top: 1rem;
+	padding: 3px 8px;
+	border: 2px solid #d1d5db;
+	border-radius: 5rem;
+	font-size: 0.9rem;
+	color: #d1d5db;
+
+	transition: all 100ms ease-in;
+}
+
+.user-details-right a:hover {
+	color: #f9fafb;
+	border: 2px solid #f9fafb;
+}
+
+.userimage {
+	width: 15rem;
+	height: 15rem;
+	border-radius: 50%;
+	margin-top: 3rem;
+	object-fit: cover;
+}
+
+/* USER-APPLICATION DETAILS */
+.user-application-details {
+	padding: 0rem 8rem;
+}
+
+.latest-updates h3,
+.current-applications h3,
+.previous-applications h3 {
+	font-size: 1.8rem;
+	font-weight: 400;
+	margin: 2rem 0rem;
+}
+
+.latest-updates p {
+	padding: 1rem;
+	background-color: #fecaca;
+	border-radius: 5px;
+	font-size: 1.1rem;
+	font-weight: 300;
+	margin-top: -3px;
+}
+
+#application-ul {
+	background: #f3f4f6;
+	border-radius: 5px;
+	border: 1px solid #e5e7eb;
+}
+
+#application-ul li {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 2rem 0rem;
+	color: #4b5563;
+}
+
+#application-ul li:not(:last-child) {
+	border-bottom: 1px solid #e5e7eb;
+}
+
+.pool .duration {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.duration {
+	margin-top: -8px;
+}
+
+.status {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.status a {
+	padding: 0.3rem 1rem;
+	border: 1px solid #9ca3af;
+	border-radius: 5rem;
+	color: #4b5563;
+	transition: all 200ms ease;
+}
+
+.status a:hover {
+	border: 1px solid #374151;
+	color: #374151;
 }
