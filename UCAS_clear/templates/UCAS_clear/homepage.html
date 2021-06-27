@@ -29,34 +29,26 @@
 
     <h2>Courses you might be interested in:</h2>
 
-    <table class="table table-striped mt-3">
+    <table class="table table-striped mt-3 mb-5">
         <thead>
             <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">University</th>
+            <th scope="col">Courses</th>
+            <th scope="col">Available Places</th>
+            <th scope="col">UCAS Points Required</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            </tr>
+
+            {% for course in courses %}
+                <tr>
+                    <th scope="row">{{course.university.name}}</th>
+                    <td>{{course.course_name}}</td>
+                    <td>{{course.course_spaces}}</td>
+                    <td>{{course.ucas_points}}</td>
+                </tr>
+            {% endfor %}
+
         </tbody>
     </table>
 

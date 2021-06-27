@@ -8,7 +8,7 @@ from django.contrib import messages
 import datetime
 
 
-from .models import User
+from .models import Course, User
 
 # Create your views here.
 
@@ -68,4 +68,8 @@ def register(request):
 
 
 def homepage(request):
-    return render(request, "UCAS_clear/homepage.html")
+    courses = Course.objects.all()[0:10]
+    context = {
+        'courses':courses,
+    }
+    return render(request, "UCAS_clear/homepage.html", context)
