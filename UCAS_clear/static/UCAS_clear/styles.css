@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+.mt-4 {
+	margin-top: 0 !important;
+}
+
 input:focus {
 	outline: none;
 }
@@ -210,4 +214,69 @@ footer .container {
 .copyright p {
 	color: #6b7280;
 	text-decoration: underline;
+}
+
+/* LANDING PAGE */
+.lp-container {
+	background: linear-gradient(
+			to bottom right,
+			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0.2)
+		),
+		url("../../static/UCAS_clear/images/background.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 90vh;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.heading {
+	font-size: 3.8rem;
+	font-weight: 400;
+	padding: 1rem 0rem;
+	text-shadow: 5px 5px 5px #1f2937;
+	color: #f9fafb;
+}
+
+.searchbar {
+	position: relative;
+	width: 60%;
+	box-shadow: 5px 5px 5px #1f2937;
+}
+
+.searchbar span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-left: 1.5rem;
+	transform: translate(-50%, -50%);
+}
+
+.searchbar .fa-search {
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+
+.searchbar input {
+	width: 100%;
+	padding: 1rem 4rem;
+	border-radius: 5rem;
+
+	font-size: 1.2rem;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+
+	border: none;
+	background-color: #f3f4f6;
+
+	transition: all 300ms ease;
+}
+
+.searchbar input:focus {
+	background-color: #dbeafe;
 }
