@@ -8,7 +8,7 @@ from django.contrib import messages
 import datetime
 
 
-from .models import Course, User
+from .models import Course, University, User
 
 # Create your views here.
 
@@ -26,7 +26,7 @@ def login_view(request):
         # Check if authentication successful
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("homepoage"))
+            return HttpResponseRedirect(reverse("homepage"))
         else:
             return render(request, "UCAS_clear/login.html", {
                 "message": "Invalid email and/or password."
@@ -68,8 +68,11 @@ def register(request):
 
 
 def homepage(request):
-    courses = Course.objects.all()[0:10]
+
+    courses = Course.objects.all()[:10]
+
     context = {
+
         'courses':courses,
     }
     return render(request, "UCAS_clear/homepage.html", context)

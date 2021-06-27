@@ -40,14 +40,16 @@
         </thead>
         <tbody>
 
-            {% for course in courses %}
+        {% for course in courses %}{{loop.index}}
+
                 <tr>
-                    <th scope="row">{{course.university.name}}</th>
+                    <th scope="row">{{course.university_name}}</th>
                     <td>{{course.course_name}}</td>
                     <td>{{course.course_spaces}}</td>
                     <td>{{course.ucas_points}}</td>
                 </tr>
-            {% endfor %}
+
+        {% endfor %}
 
         </tbody>
     </table>
