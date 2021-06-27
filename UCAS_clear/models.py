@@ -14,7 +14,7 @@ class University(models.Model):
         return self.university_name
 
 class Course(models.Model):
-    university_id = models.IntegerField(default=None)
+    university_id = models.ForeignKey(University, on_delete=models.CASCADE, default=None)
     course_name = models.CharField(max_length=255, default=None)
     ucas_points = models.IntegerField(default=None)
     course_spaces = models.IntegerField(default=None)
