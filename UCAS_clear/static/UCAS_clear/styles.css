@@ -42,7 +42,6 @@ a:hover {
 	color: #6b7280;
 }
 
-#logout,
 #register {
 	background-color: #6b7280;
 	color: white;
@@ -51,10 +50,6 @@ a:hover {
 	align-items: center;
 	padding: 0rem 1rem;
 	margin-left: 2rem;
-}
-
-#logout {
-	height: 100%;
 }
 
 .nav-item a:hover {
@@ -455,4 +450,161 @@ footer .container {
 .status a:hover {
 	border: 1px solid #374151;
 	color: #374151;
+}
+
+/* COURSE DETAIL */
+
+.header {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+		url("../../static/UCAS_clear/images/uni.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 90vh;
+	--webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 0% 20%);
+	clip-path: polygon(0% 0%, 100% 0%, 100% 80vh, 0% 70vh);
+
+	color: #f3f4f6;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	padding: 6rem 8rem;
+}
+
+.uni-detail {
+	/*	width: 50%;*/
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.logo {
+	margin-right: 3rem;
+	color: #e5e7eb;
+}
+
+.logo img {
+	width: 10rem;
+	height: 10rem;
+}
+
+.uni-info h2 {
+	color: #d1d5db;
+	margin-bottom: 1rem;
+}
+
+.uni-info p {
+	margin: 0 !important;
+	padding: 0.1rem 0rem;
+}
+
+.course-detail {
+	margin-top: 2rem;
+}
+
+.course-name {
+	font-size: 1.8rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #d1d5db;
+}
+
+.pool-timeline {
+	width: 80vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-bottom: 2px solid;
+}
+
+.pool-timeline p:first-child {
+	margin-right: 3rem;
+	font-size: 1.2rem;
+	font-weight: 300;
+}
+
+.pool-timeline p:last-child {
+	font-size: 1.2rem;
+}
+
+.green {
+	color: #34d399;
+	font-weight: 500;
+}
+
+.course-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.course-info-right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 2rem;
+}
+
+.qualification h4,
+.length h4,
+.study-mode h4,
+.start-date h4 {
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+.qualification p,
+.length p,
+.study-mode p,
+.start-date p {
+	font-weight: 300;
+}
+
+.course-info-right div:not(:last-child) {
+	margin-right: 4rem;
+}
+
+.course-info-left a {
+	text-decoration: none;
+	padding: 0.3rem 1rem;
+	margin: 0rem 0.5rem;
+	color: #d1d5db;
+	border: 2px solid #d1d5db;
+	border-radius: 5rem;
+	transition: all 200ms ease;
+}
+
+.course-info-left a:hover {
+	background-color: #3b82f6;
+}
+
+.header-p {
+	font-weight: 300;
+	color: #d1d5db;
+}
+
+.main {
+	padding: 2rem 8rem;
+}
+
+.course-summary h3 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	padding: 1rem 0rem;
+	color: #374151;
+}
+
+.course-summary p {
+	font-size: 1.1rem;
+	font-weight: 300;
+}
+
+.course-summary ul li {
+	margin-left: 2rem;
+	font-size: 1.1rem;
+	font-weight: 300;
 }

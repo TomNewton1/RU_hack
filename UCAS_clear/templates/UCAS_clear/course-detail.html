@@ -1,0 +1,114 @@
+{% extends "UCAS_clear/layout.html" %} {% load static %} {% block body %}
+
+<div class="coursedetail-container">
+	<div class="header">
+		<div class="uni-detail">
+			<div class="logo">
+				<img src="../../static/UCAS_clear/images/logo.png" alt="logo" />
+			</div>
+			<div class="uni-info">
+				<h2>{{course.university_name}}</h2>
+				<p><span>Location</span>, <span>uni@website.com.uk</span></p>
+				<p>Degree Level: <span>Undergraduate</span></p>
+				<p>Awarded By: <span>University of London</span></p>
+			</div>
+		</div>
+		<div class="course-detail">
+			<div class="course-name">{{course.course_name}}</div>
+			<div class="pool-timeline">
+				<p>
+					<span>{{course.course_spaces}}</span> Openings, {{course.filled_spaces}} applicants in pool &mdash;
+					<span class="green">You are eligible</span>
+				</p>
+				<p>closes on <span>{{course.closing_date}} </span></p>
+			</div>
+			<div class="course-info">
+				<div class="course-info-right">
+					<div class="qualification">
+						<h4>Qualification</h4>
+						<p>Bachelor of Science Computing</p>
+					</div>
+					<div class="length">
+						<h4>Length</h4>
+						<p>4 years</p>
+					</div>
+					<div class="study-mode">
+						<h4>Study Mode</h4>
+						<p>Full time</p>
+					</div>
+					<div class="start-date">
+						<h4>Start date</h4>
+						<p>June-21st</p>
+					</div>
+				</div>
+				<div class="course-info-left">
+					<a href="#">Quick Apply</a>
+					<a href="#">Apply with other documents</a>
+				</div>
+			</div>
+		</div>
+		<p class="header-p">
+			Upon clicking Quick Apply, your application will be sent with the Personal
+			Statement and References you have attached in your User Area.
+		</p>
+	</div>
+
+	<div class="main">
+		<div class="course-summary">
+			<h3>Course Summary</h3>
+			<p>
+				A rational approach to the development of treatments for current and
+				emerging threats to human wellbeing depends upon a sound knowledge of
+				human health and disease. Biomedicine is at the interface between
+				molecular, cell and integrative biology and evolving disease therapies,
+				while biomedical research is pivotal in transferring advances in basic
+				science into both effective practices that promote human health and
+				treatments for human diseases. <br />
+				<br />
+				Our BSc Biomedicine will provide you with the knowledge and skills for
+				participation in the biomedical community, either professionally or
+				personally. After gaining entry to this programme via UCAS and
+				completing Year 1, you can elect to decelerate your pace of study and
+				transfer to a four-year, part-time evening study version of this degree.
+				This course is also available for part-time evening study over six
+				years. This programme is accredited by the Royal Society of Biology for
+				the purpose of meeting in part the academic and experience requirement
+				for the Membership and Chartered Biologist (CBiol).
+				<br /><br />
+				After gaining entry to this programme via UCAS and completing Year 1,
+				you can elect to decelerate your pace of study and transfer to a
+				four-year, part-time evening study version of this degree. This course
+				is also available for part-time evening study over six years. This
+				programme is accredited by the Royal Society of Biology for the purpose
+				of meeting in part the academic and experience requirement for the
+				Membership and Chartered Biologist (CBiol).
+			</p>
+			<ul>
+				<h3>Highlights:</h3>
+				<li>
+					Birkbeck's Department of Biological Sciences provides
+					state-of-the-art, specialist laboratories and facilities at the heart
+					of academic London.
+				</li>
+				<li>
+					In the most recent Research Excellence Framework (REF), in a joint
+					submission with UCL, Biological Sciences at Birkbeck were ranked 11th
+					in the UK.
+				</li>
+				<li>
+					You will be taught by internationally distinguished experts who work
+					with governments and institutions around the globe to extend the
+					boundaries of knowledge.
+				</li>
+				<li>
+					Working in close collaboration with the Institute of Structural and
+					Molecular Biology, a joint institute between Birkbeck and UCL, our
+					Department is recognised for the excellence and international impact
+					of its research.
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

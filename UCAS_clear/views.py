@@ -93,7 +93,7 @@ def course(request, pk):
         'course':course,
     }
 
-    return render(request, "UCAS_clear/course.html", context)
+    return render(request, "UCAS_clear/course-detail.html", context)
 
 
 def userpage(request):
