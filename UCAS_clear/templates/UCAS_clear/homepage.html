@@ -28,6 +28,7 @@
     <div class="container mt-5">
 
     <h2>Courses you might be interested in:</h2>
+    <p>**Click on a course to view it**</p>
 
     <table class="table table-striped mt-3 mb-5">
         <thead>
@@ -44,7 +45,7 @@
 
                 <tr>
                     <th scope="row">{{course.university_name}}</th>
-                    <td>{{course.course_name}}</td>
+                    <td><a class="nav-link" href="{% url 'course' course.id %}">{{course.course_name}}</a></td>
                     <td>{{course.course_spaces}}</td>
                     <td>{{course.ucas_points}}</td>
                 </tr>

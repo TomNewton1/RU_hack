@@ -1,15 +1,13 @@
 {% extends "UCAS_clear/layout.html" %} {% load static %} {% block body %}
 
-<div class="lp-container">
-	<h2 class="heading">Discover Your Future</h2>
-	<div class="searchbar">
-		<span><i class="fas fa-search"></i></span>
-		<input
-			class="input"
-			type="text"
-			placeholder="Search for universities, colleges and courses infromation"
-		/>
+<form action="{% url 'homepage' %}" method="get">
+	<div class="lp-container">
+		<h2 class="heading">Discover Your Future</h2>
+		<div class="searchbar">
+			<span><i class="fas fa-search"></i></span>
+			<input class="input" type="text" placeholder="Search for universities, colleges and courses infromation"/>
+		</div>
 	</div>
-</div>
+</form>
 
 {% endblock %}

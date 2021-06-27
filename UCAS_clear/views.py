@@ -76,3 +76,15 @@ def homepage(request):
         'courses':courses,
     }
     return render(request, "UCAS_clear/homepage.html", context)
+
+
+def course(request, pk):
+
+    course = Course.objects.get(id=pk)
+
+    context = {
+
+        'course':course,
+    }
+
+    return render(request, "UCAS_clear/course.html", context)

@@ -21,7 +21,7 @@
     <div class="d-flex flex-column min-vh-100">
 
        <nav class="navbar navbar-expand-lg" style="color:white;">
-                <a class="navbar-brand crop" href="">
+                <a class="navbar-brand crop" href="{% url 'index' %}">
                     <img src="{% static 'UCAS_clear/images/UCAS_logo.png' %}"  alt="no" height="60">
                 </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
                         <a class="nav-link" href="">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Search Courses</a>
+                        <a class="nav-link" href="{% url 'homepage' %}">Search Courses</a>
                     </li>
 
                     <li class="nav-item">
