@@ -72,3 +72,6 @@ def homepage(request):
 
 def userpage(request):
     return render(request, "UCAS_clear/userpage.html")
+
+def coursedetail(request):
+    return render(request, "UCAS_clear/course-detail.html")
