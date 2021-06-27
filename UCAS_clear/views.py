@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
+from django.core.paginator import Paginator
 import datetime
 
 
@@ -69,11 +70,16 @@ def register(request):
 
 def homepage(request):
 
-    courses = Course.objects.all()[:10]
+    courses = Course.objects.order_by('?')[:100]
+
+    paginator = Paginator(courses, per_page=20)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
 
     context = {
 
-        'courses':courses,
+        'courses':page_obj.object_list,
+        'paginator':paginator,
     }
     return render(request, "UCAS_clear/homepage.html", context)
 
