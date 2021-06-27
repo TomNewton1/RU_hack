@@ -69,3 +69,6 @@ def register(request):
 
 def homepage(request):
     return render(request, "UCAS_clear/homepage.html")
+
+def userpage(request):
+    return render(request, "UCAS_clear/userpage.html")
