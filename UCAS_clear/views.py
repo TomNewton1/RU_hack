@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.contrib import messages
 from django.core.paginator import Paginator
+from .filters import CourseFilter
 import datetime
 
 
@@ -67,22 +68,51 @@ def register(request):
     else:
         return render(request, "UCAS_clear/register.html")
 
-
+"""
 def homepage(request):
 
+    
     courses = Course.objects.order_by('?')[:100]
 
     paginator = Paginator(courses, per_page=20)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
 
+    all_courses = Course.objects.all()
+
+    myFilter = CourseFilter(request.GET, queryset=all_courses)
+    all_courses = myFilter.qs
+
     context = {
 
-        'courses':page_obj.object_list,
-        'paginator':paginator,
+        #'courses':page_obj.object_list,
+        'courses':all_courses,
+        #'paginator':paginator,
+        'myFilter':myFilter,
     }
     return render(request, "UCAS_clear/homepage.html", context)
 
+"""
+
+def homepage(request):
+
+    all_courses = Course.objects.all()
+
+    myFilter = CourseFilter(request.GET, queryset=all_courses)
+
+    filtered_courses = myFilter
+
+    paginated_filtered_courses = Paginator(filtered_courses.qs, 10)
+    page_number = request.GET.get('page')
+    course_page_object = paginated_filtered_courses.get_page(page_number)
+
+    context = {
+
+        'filtered_courses':filtered_courses,
+        'course_page_object':course_page_object,
+    }
+
+    return render(request, "UCAS_clear/homepage.html", context)
 
 def course(request, pk):
 

@@ -1,48 +1,41 @@
 {% extends "UCAS_clear/layout.html" %}
 {% load static %}
+{% load UCAS_clear_extras %}
 
 {% block body %}
 
-     <div class="container mt-5">
+    <div class="container mt-5">
+        
+        <h2>Search for courses</h2>
 
-     <h2>Search for courses</h2>
+        <form action="{% url 'homepage' %}" method="get">
 
-        <form action="https://google.com/search">
-            <div class="form-group pt-5 ">
-                <div class="row justify-content-center">
-                    <div class="col-6">
-                        <input type="text" class="form-control" id="formGroupExampleInput"  name="q" placeholder="Search...">
-                    </div>
-                </div>
-                <div class="row justify-content-center pt-3">
-                    <div>
-                        <button type="submit" class="btn btn-primary" style="background-color: #f8f9fa; border: 1px solid #f8f9fa; border-radius: 4px; color: #3c4043;">Search for clearing courses</button>
-                    </div>
-                </div>
-            </div>
+        {{filtered_courses.form.as_p}}
+
+        <button type="submit" class="btn btn-primary" style="background-color: #f8f9fa; border: 1px solid #f8f9fa; border-radius: 4px; color: #3c4043;">Search for clearing courses</button>
+
         </form>
     
     </div>
 
 
-    <div class="container mt-5">
+     <div class="container mt-5">
 
-    <h2>Courses you might be interested in:</h2>
-    <p>**Click on a course to view it**</p>
+        <h2>Courses you might be interested in:</h2>
+        <p>**Click on a course to view it**</p>
 
-    <table class="table table-striped mt-3 mb-5">
-        <thead>
-            <tr>
-            <th scope="col">University</th>
-            <th scope="col">Courses</th>
-            <th scope="col">Available Places</th>
-            <th scope="col">UCAS Points Required</th>
-            </tr>
-        </thead>
-        <tbody>
+        <table class="table table-striped mt-3 mb-5">
+            <thead>
+                <tr>
+                <th scope="col">University</th>
+                <th scope="col">Courses</th>
+                <th scope="col">Available Places</th>
+                <th scope="col">UCAS Points Required</th>
+                </tr>
+            </thead>
+            <tbody>
 
-
-        {% for course in courses %}
+            {% for course in course_page_object %}
 
                 <tr>
                     <th scope="row">{{course.university_name}}</th>
@@ -51,23 +44,34 @@
                     <td>{{course.ucas_points}}</td>
                 </tr>
 
-        {% endfor %}
-
-
-        </tbody>
-        
-        <ul class="pagination">
-            {% for i in paginator.page_range %}
-                <li class="page.item">
-                    <a class="page-link" href="?page={{ i }}">{{i}}</a>
-                </li>
             {% endfor %}
-        </ul>
-
-    </div>
-    </table>
 
 
+            </tbody>
+
+        </table> 
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if course_page_object.has_previous %}
+                    <a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo; First</a>
+                    <a href="{% my_url course_page_object.previous_page_number 'page' request.GET.urlencode %}">Previous</a>
+            
+                {% endif %}
+
+                <span class="current">
+                    Page {{course_page_object.number}} of {{course_page_object.paginator.num_pages}}
+                </span>
+
+                {% if course_page_object.has_next %}
+                    <a href="{% my_url course_page_object.next_page_number 'page' request.GET.urlencode %}">Next</a>
+                    <a href="{% my_url course_page_object.paginator.num_pages 'page' request.GET.urlencode %}">&raquo; Last</a>
+            
+                {% endif %}
+
+
+            </span>
+        </div> 
 
 
 
